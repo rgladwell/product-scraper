@@ -1,0 +1,22 @@
+{
+  "name": "product-scraper",
+  "version": "0.1.0",
+  "authors": [
+    "Ricardo Gladwell <ricardo@gladwell.me>"
+  ],
+  "description": "Scrape product information from popular retailer web sites.",
+  "main": "dist/product-scraper.js",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "Gruntfile.js",
+    "package.json"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.16"
+  }
+}
