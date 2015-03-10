@@ -74,6 +74,14 @@
                     done();
                 });
             });
+
+            it('should parse Amazon books on TLS redirect', function (done) {
+                require(['product-scraper'], function(scraper) {
+                    var product = scraper.scrape(amazonBookDocument, 'http://www.amazon.co.uk/gp/product/0099586738?*Version*=1&*entries*=0');
+                    expect(product.type).to.exist.and.equal('Book');
+                    done();
+                });
+            });
         });
 
         describe('on Amazon index page', function () {

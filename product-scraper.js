@@ -8,7 +8,7 @@ define('product-scraper', function () {
 
         // TODO reptition of URL regular expression in crx manifest
         this.parses = function(url) {
-            return url.match(/^(https?):\/\/www\.amazon\..+\/dp\/.+$/);
+            return url.match(/^(https?):\/\/www\.amazon\..+\/(dp|gp)\/.+$/);
         };
 
         this.parse = function(doc) {
