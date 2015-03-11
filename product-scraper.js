@@ -7,8 +7,9 @@ define('product-scraper', function () {
         this.name = 'AmazonBookParser';
 
         // TODO reptition of URL regular expression in crx manifest
-        this.parses = function(url) {
-            return url.match(/^(https?):\/\/www\.amazon\..+\/(dp|gp)\/.+$/);
+        this.parses = function(doc, url) {
+            var validUrl = url.match(/^(https?):\/\/www\.amazon\..+\/(dp|gp)\/.+$/);
+            return validUrl && doc && doc.getElementById('ASIN');
         };
 
         this.parse = function(doc) {
@@ -37,7 +38,7 @@ define('product-scraper', function () {
         scrape: function(doc, url) {
             for(var i = 0; i < parsers.length; i++) {
                 var parser = parsers[i];
-                if(parser.parses(url)) {
+                if(parser.parses(doc, url)) {
                     console.log('parsing ' + doc + ' with ' + parser.name);
                     var product = parser.parse(doc);
                     return product;

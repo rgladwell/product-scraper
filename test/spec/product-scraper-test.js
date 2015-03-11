@@ -36,6 +36,9 @@
 </form>\
 </div>';
 
+
+    var badHtml = '<!doctype html><head></head><body></body></html>';
+
     describe('Product scrapper', function () {
 
         describe('on Amazon book product page', function () {
@@ -79,6 +82,17 @@
                 require(['product-scraper'], function(scraper) {
                     var product = scraper.scrape(amazonBookDocument, 'http://www.amazon.co.uk/gp/product/0099586738?*Version*=1&*entries*=0');
                     expect(product.type).to.exist.and.equal('Book');
+                    done();
+                });
+            });
+
+            var badAmazonBookDocument = document.implementation.createHTMLDocument();
+            badAmazonBookDocument.documentElement.innerHTML = badHtml;
+
+            it('should not parse malformed product page', function (done) {
+                require(['product-scraper'], function(scraper) {
+                    var product = scraper.scrape(badAmazonBookDocument, 'http://www.amazon.co.uk/Dust-Wool-Trilogy-Hugh-Howey/dp/0099586738');
+                    expect(product).to.not.exist;
                     done();
                 });
             });
