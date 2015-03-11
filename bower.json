@@ -16,7 +16,7 @@
     "Gruntfile.js",
     "package.json"
   ],
-  "dependencies": {
+  "devDependencies": {
     "requirejs": "~2.1.16"
   }
 }
