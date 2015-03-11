@@ -92,6 +92,18 @@
                 });
             });
         });
+
+        describe('on non-Book Amazon product page', function () {
+            it('should not parse non-book page', function (done) {
+                require(['product-scraper'], function(scraper) {
+                    withPage('amazon-earrings.html', function(html) {
+                        var product = scraper.scrape(html, 'http://www.amazon.co.uk');
+                        expect(product).to.not.exist;
+                        done();
+                    });
+                });
+            });
+        });
     });
 
 })();
