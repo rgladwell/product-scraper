@@ -39,7 +39,7 @@ define('product-scraper', function () {
             for(var i = 0; i < parsers.length; i++) {
                 var parser = parsers[i];
                 if(parser.parses(doc, url)) {
-                    console.log('parsing ' + doc + ' with ' + parser.name);
+                    console.log('parsing ' + url + ' with ' + parser.name);
                     var product = parser.parse(doc);
                     return product;
                 }
