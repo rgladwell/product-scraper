@@ -6,7 +6,7 @@
     require.config({
         baseUrl: '.',
         paths: {
-            'text': 'bower_components/requirejs-text/text'
+            'text': '../bower_components/requirejs-text/text'
         }
     });
 

@@ -16,7 +16,12 @@
     "Gruntfile.js",
     "package.json"
   ],
-  "devDependencies": {
+  "dependencies" : {
     "requirejs": "~2.1.16"
+  },
+  "devDependencies": {
+    "chai": "~1.8.0",
+    "mocha": "~1.14.0",
+    "requirejs-text": "~2.0.14"
   }
 }

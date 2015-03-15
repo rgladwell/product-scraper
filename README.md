@@ -20,8 +20,4 @@ To build execute:
 
 To run unit tests execute:
 
-```sh
-$ cd test
-$ bower install
-$ grunt test
-```
+    $ grunt test
