@@ -8,6 +8,7 @@ web pages.
 Requirements:
 
   * [Node.js](http://nodejs.org/).
+  * [Phantomjs](http://phantomjs.org/download.html).
 
 To set-up your environment execute:
 
